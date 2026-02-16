@@ -5,63 +5,254 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rodrigo Ribeiro - Data Engineer Portfolio</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
+      box-sizing: border-box;
     }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #333;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
     header {
-      background-color: #2c3e50;
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
       color: white;
-      padding: 20px 0;
+      padding: 60px 0;
       text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-    nav {
-      background-color: #34495e;
-      padding: 10px;
-      text-align: center;
+    
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      font-weight: 700;
     }
-    nav a {
-      color: white;
+    
+    header p {
+      font-size: 1.3em;
+      margin-bottom: 5px;
+      color: #ecf0f1;
+    }
+    
+    header .links {
+      margin-top: 20px;
+    }
+    
+    header .links a {
+      color: #3498db;
       margin: 0 15px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: color 0.3s;
     }
+    
+    header .links a:hover {
+      color: #5dade2;
+    }
+    
+    nav {
+      background-color: #34495e;
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: all 0.3s;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    
     nav a:hover {
-      text-decoration: underline;
+      background-color: #3498db;
     }
+    
     section {
-      padding: 30px;
-      max-width: 1000px;
-      margin: auto;
       background-color: white;
-      margin-top: 20px;
-      border-radius: 10px;
+      padding: 50px;
+      margin: 30px auto;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      max-width: 1100px;
     }
+    
+    h2 {
+      color: #2c3e50;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+      font-size: 2em;
+      font-weight: 600;
+    }
+    
+    h3 {
+      color: #34495e;
+      margin-top: 25px;
+      margin-bottom: 15px;
+      font-size: 1.5em;
+    }
+    
+    .job-title {
+      color: #2c3e50;
+      font-weight: 600;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    
+    ul {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+    
+    ul li {
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+    
+    .project-card {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      border-left: 5px solid #3498db;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    
+    .project-card h3 {
+      color: #2c3e50;
+      margin-top: 0;
+      font-size: 1.8em;
+    }
+    
+    .project-card .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 15px 0;
+    }
+    
+    .project-card .tech-badge {
+      background-color: #3498db;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      font-weight: 600;
+    }
+    
+    .project-card .description {
+      margin: 20px 0;
+      line-height: 1.8;
+      color: #2c3e50;
+    }
+    
+    .project-card .links {
+      margin-top: 20px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 5px 10px 5px 0;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: all 0.3s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .btn:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .btn-secondary {
+      background-color: #95a5a6;
+    }
+    
+    .btn-secondary:hover {
+      background-color: #7f8c8d;
+    }
+    
+    .highlight {
+      background-color: #fff3cd;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+    
     footer {
-      background-color: #2c3e50;
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
       color: white;
       text-align: center;
-      padding: 15px 0;
-      margin-top: 30px;
+      padding: 30px 0;
+      margin-top: 50px;
+      box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
     }
-    h2 {
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 5px;
+    
+    footer p {
+      font-size: 1.1em;
+    }
+    
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+      
+      section {
+        padding: 30px 20px;
+      }
+      
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+      
+      .project-card {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Rodrigo Ribeiro</h1>
-    <p>Senior Data Engineer | Business Intelligence Specialist</p>
-    <p>
-      <a href="https://www.linkedin.com/in/rodrigo-ribeiro-pro/" style="color:#ecf0f1;" target="_blank">LinkedIn</a> | 
-      <a href="https://github.com/dbconsultoria" style="color:#ecf0f1;" target="_blank">GitHub</a>
-    </p>
+    <div class="container">
+      <h1>Rodrigo Ribeiro</h1>
+      <p>Senior Data Engineer | Business Intelligence Specialist</p>
+      <p style="margin-top: 10px; color: #bdc3c7;">Building scalable data solutions with Apache Spark, Python & Cloud Technologies</p>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/rodrigo-ribeiro-pro/" target="_blank">🔗 LinkedIn</a>
+        <a href="https://github.com/dbconsultoria" target="_blank">💻 GitHub</a>
+      </div>
+    </div>
   </header>
 
   <nav>
@@ -72,47 +263,106 @@
   </nav>
 
   <section id="experience">
-    <h2>Experience</h2>
-    <p><strong>Dell Technologies</strong> – Senior Data Engineer</p>
+    <h2>💼 Professional Experience</h2>
+    
+    <div class="job-title">Dell Technologies – Senior Data Engineer</div>
     <ul>
-      <li>Led a data engineering team, designing robust ETL pipelines and lakehouse architectures.</li>
-      <li>Worked with SQL Server, Python, Airflow, SSIS, and Azure DevOps CI/CD in Agile environments.</li>
-      <li>Collaborated with Machine Learning teams to streamline data integration.</li>
+      <li>Led a <span class="highlight">data engineering team</span>, designing robust ETL pipelines and lakehouse architectures</li>
+      <li>Architected and implemented data solutions using <span class="highlight">SQL Server, Python, Airflow, SSIS</span>, and <span class="highlight">Azure DevOps CI/CD</span></li>
+      <li>Worked in <span class="highlight">Agile environments</span> delivering high-quality data products</li>
+      <li>Collaborated with <span class="highlight">Machine Learning teams</span> to streamline data integration and model deployment</li>
     </ul>
-    <p><strong>Previous roles</strong>: BI Specialist, Data Architect at Cresol, DBAplex (10+ years in BI/DW).</p>
+    
+    <div class="job-title" style="margin-top: 30px;">Previous Roles</div>
+    <p>BI Specialist & Data Architect at Cresol, DBAplex | <strong>10+ years of experience</strong> in Business Intelligence, Data Warehousing, and Analytics</p>
   </section>
 
   <section id="education">
-    <h2>Education</h2>
-    <p><strong>Bachelor’s Degree in Computer Science</strong></p>
-    <p>+ Continuous studies in Data Architecture, Python, Cloud and Business Intelligence.</p>
+    <h2>🎓 Education</h2>
+    <h3>Bachelor's Degree in Computer Science</h3>
+    <p style="margin-top: 15px;">Continuous professional development in:</p>
+    <ul>
+      <li>Data Architecture & Modeling</li>
+      <li>Python for Data Engineering</li>
+      <li>Cloud Technologies (Azure, AWS)</li>
+      <li>Advanced Business Intelligence</li>
+      <li>Apache Spark & Distributed Computing</li>
+    </ul>
   </section>
 
   <section id="certifications">
-    <h2>Certifications</h2>
+    <h2>🏆 Certifications</h2>
     <ul>
-<li>MicrosoftCertified: Azure Database Administrator Associate – DP-300 - 2023</li>
-<li>Microsoft Certified: Power BI Data Analyst Associate – PL-300 - 2022</li>
-<li>Microsoft Certified: Azure Data Engineer – DP-203 - 2022</li>
-<li>International English Test <a href="https://internationalenglishtest.com/verify-certificate/7343410A8B-7343410AEC-734340E2B0" target="_blank">B2 Upper Intermediate English Level</a> 
-
+      <li><strong>Microsoft Certified: Azure Database Administrator Associate</strong> – DP-300 (2023)</li>
+      <li><strong>Microsoft Certified: Power BI Data Analyst Associate</strong> – PL-300 (2022)</li>
+      <li><strong>Microsoft Certified: Azure Data Engineer</strong> – DP-203 (2022)</li>
+      <li><strong>International English Test:</strong> <a href="https://internationalenglishtest.com/verify-certificate/7343410A8B-7343410AEC-734340E2B0" target="_blank" style="color: #3498db; font-weight: 600;">B2 Upper Intermediate English Level</a></li>
     </ul>
   </section>
 
   <section id="portfolio">
-    <h2>Portfolio</h2>
-    <p><strong>Weather Data ETL Project</strong></p>
-    <p>
-      A complete data engineering pipeline using Python, Docker, PostgreSQL, and deployment via Render. It extracts weather data from a public API, stores it in a PostgreSQL data warehouse, and is ready for business analysis and visualization.
-    </p>
-    <p><a href="https://github.com/dbconsultoria/weatherproject" target="_blank">View on GitHub</a></p>
-    <p><a href="https://weatherstreamlit.onrender.com" target="_blank">View the Streamlit APP</a></p>
-    <p><a href="http://tiny.cc/wsm8vz" target="_blank">My PowerBI Portfolio</a></p>
+    <h2>🚀 Portfolio Projects</h2>
+    
+    <!-- New Spark Project -->
+    <div class="project-card">
+      <h3>⚡ Data Warehouse with Medallion Architecture & Apache Spark</h3>
+      
+      <div class="tech-stack">
+        <span class="tech-badge">Apache Spark</span>
+        <span class="tech-badge">PySpark</span>
+        <span class="tech-badge">Docker</span>
+        <span class="tech-badge">MySQL</span>
+        <span class="tech-badge">Parquet</span>
+        <span class="tech-badge">SCD Type 2</span>
+        <span class="tech-badge">Star Schema</span>
+      </div>
+      
+      <div class="description">
+        <p><strong>A complete enterprise-grade Data Warehouse</strong> implementation showcasing advanced data engineering techniques:</p>
+        <ul>
+          <li>🏗️ <strong>Medallion Architecture:</strong> Bronze (raw) → Silver (cleaned) → Gold (business-ready)</li>
+          <li>📊 <strong>Dimensional Modeling:</strong> Star Schema with fact and dimension tables</li>
+          <li>🔄 <strong>SCD Type 2:</strong> Full historical tracking of dimensional changes (rarely implemented in Spark projects)</li>
+          <li>⚙️ <strong>ETL Pipelines:</strong> Automated data processing with PySpark</li>
+          <li>🐳 <strong>Containerized:</strong> Complete Docker environment for easy deployment</li>
+          <li>✅ <strong>Data Quality:</strong> Validation and testing across all layers</li>
+        </ul>
+        <p style="margin-top: 15px;"><em>This project demonstrates real-world data warehouse construction with best practices used in Fortune 500 companies.</em></p>
+      </div>
+      
+      <div class="links">
+        <a href="https://github.com/dbconsultoria/myspark" target="_blank" class="btn">📂 View on GitHub</a>
+        <a href="https://github.com/dbconsultoria/myspark#readme" target="_blank" class="btn btn-secondary">📖 Read Documentation</a>
+      </div>
+    </div>
+
+    <!-- Power BI Portfolio -->
+    <div class="project-card">
+      <h3>📊 Power BI Portfolio</h3>
+      
+      <div class="tech-stack">
+        <span class="tech-badge">Power BI</span>
+        <span class="tech-badge">DAX</span>
+        <span class="tech-badge">Data Visualization</span>
+        <span class="tech-badge">Business Intelligence</span>
+      </div>
+      
+      <div class="description">
+        <p>Collection of interactive dashboards and reports demonstrating advanced Power BI capabilities, DAX calculations, and data storytelling for business insights.</p>
+      </div>
+      
+      <div class="links">
+        <a href="http://tiny.cc/wsm8vz" target="_blank" class="btn">📊 View Portfolio</a>
+      </div>
+    </div>
+    
   </section>
 
   <footer>
-    <p>© 2025 Rodrigo Ribeiro</p>
+    <div class="container">
+      <p>© 2025 Rodrigo Ribeiro | Senior Data Engineer</p>
+      <p style="margin-top: 10px; font-size: 0.9em;">Building the future of data, one pipeline at a time 🚀</p>
+    </div>
   </footer>
-
 </body>
 </html>
