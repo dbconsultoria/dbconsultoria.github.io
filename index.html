@@ -288,29 +288,16 @@
       }
     }
 
-    /* Hide/show language content */
-    .lang-en, .lang-pt {
-      display: none;
-    }
-    body.lang-en .lang-en {
-      display: contents;
-    }
-    body.lang-pt .lang-pt {
-      display: contents;
-    }
-    /* Inline elements inside paragraphs/li need inline display */
-    p .lang-en, p .lang-pt,
-    li .lang-en, li .lang-pt {
-      display: none;
-    }
-    body.lang-en p .lang-en,
-    body.lang-en li .lang-en {
-      display: inline;
-    }
-    body.lang-pt p .lang-pt,
-    body.lang-pt li .lang-pt {
-      display: inline;
-    }
+    /* Language switching - English visible by default */
+    .lang-pt { display: none; }
+    .lang-en { display: contents; }
+    p .lang-en, li .lang-en { display: inline; }
+    p .lang-pt, li .lang-pt { display: none; }
+
+    body.lang-pt .lang-pt { display: contents; }
+    body.lang-pt .lang-en { display: none; }
+    body.lang-pt p .lang-pt, body.lang-pt li .lang-pt { display: inline; }
+    body.lang-pt p .lang-en, body.lang-pt li .lang-en { display: none; }
   </style>
 </head>
 <body class="lang-en">
