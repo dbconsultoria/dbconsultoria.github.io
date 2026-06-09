@@ -64,8 +64,15 @@
     .project-card h3 { color: #2c3e50; margin-top: 0; font-size: 1.8em; }
     .tech-stack { display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0; }
     .tech-badge { background-color: #3498db; color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.9em; font-weight: 600; }
+    .tech-badge.accent { background-color: #e67e22; }
     .description { margin: 20px 0; line-height: 1.8; color: #2c3e50; }
     .project-card .links { margin-top: 20px; }
+
+    .perf-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95em; }
+    .perf-table th { background-color: #2c3e50; color: white; padding: 8px 12px; text-align: left; }
+    .perf-table td { padding: 8px 12px; border-bottom: 1px solid #dce1e7; }
+    .perf-table tr:last-child td { border-bottom: none; }
+    .perf-highlight { font-weight: 700; color: #27ae60; }
 
     .btn {
       display: inline-block; padding: 12px 25px; margin: 5px 10px 5px 0;
@@ -152,6 +159,7 @@
   <section id="portfolio">
     <h2 id="port-title"></h2>
 
+    <!-- PROJECT 1: Spark -->
     <div class="project-card">
       <h3 id="spark-title"></h3>
       <div class="tech-stack">
@@ -175,6 +183,48 @@
       </div>
     </div>
 
+    <!-- PROJECT 2: ClickHouse -->
+    <div class="project-card">
+      <h3 id="ch-title"></h3>
+      <div class="tech-stack">
+        <span class="tech-badge accent">ClickHouse</span>
+        <span class="tech-badge">Python 3.11</span>
+        <span class="tech-badge">FastAPI</span>
+        <span class="tech-badge">Docker</span>
+        <span class="tech-badge">MergeTree Engine</span>
+        <span class="tech-badge">Columnar Storage</span>
+        <span class="tech-badge">REST API</span>
+      </div>
+      <div class="description">
+        <p id="ch-intro"></p>
+        <ul id="ch-list"></ul>
+        <div style="margin-top: 20px;">
+          <p id="ch-perf-label" style="font-weight: 600; margin-bottom: 8px;"></p>
+          <table class="perf-table">
+            <thead>
+              <tr><th id="ch-th-query"></th><th id="ch-th-time"></th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="ch-q1"></td>
+                <td class="perf-highlight">78 ms</td>
+              </tr>
+              <tr>
+                <td id="ch-q2"></td>
+                <td class="perf-highlight">&lt; 5 ms</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top: 15px;"><em id="ch-footer"></em></p>
+      </div>
+      <div class="links">
+        <a href="https://github.com/dbconsultoria/clickhouselab" target="_blank" class="btn" id="btn-ch-github"></a>
+        <a href="https://github.com/dbconsultoria/clickhouselab#readme" target="_blank" class="btn btn-secondary" id="btn-ch-docs"></a>
+      </div>
+    </div>
+
+    <!-- PROJECT 3: Power BI -->
     <div class="project-card">
       <h3>&#128202; Power BI Portfolio</h3>
       <div class="tech-stack">
@@ -190,6 +240,7 @@
         <a href="https://sites.google.com/view/dse-servios-especializados/showcase?authuser=0" target="_blank" class="btn" id="btn-pbi"></a>
       </div>
     </div>
+
   </section>
 
   <footer>
@@ -242,6 +293,23 @@
         'spark-footer': 'This project demonstrates real-world data warehouse construction with best practices used in Fortune 500 companies.',
         'btn-github': '&#128194; View on GitHub',
         'btn-docs': '&#128214; Read Documentation',
+        'ch-title': '&#128200; NYC Taxi ClickHouse Lab — 78ms over 1M rows',
+        'ch-intro': '<strong>Interactive ingestion and analytics pipeline</strong> using ClickHouse as a columnar database, featuring a real-time web interface that tracks download and insert progress and allows running arbitrary SQL queries after load:',
+        'ch-list': [
+          '&#128202; <strong>Columnar Storage:</strong> MergeTree engine with LowCardinality compression for high-cardinality string columns',
+          '&#9889; <strong>Real-time Pipeline:</strong> Async streaming download → batch insert (50k rows/batch) → live progress via REST API',
+          '&#128051; <strong>Fully Containerized:</strong> ClickHouse + FastAPI running on Docker Compose with persistent volume',
+          '&#128269; <strong>Interactive Query Editor:</strong> Web UI for running arbitrary SQL directly against the 1M-row dataset',
+          '&#128296; <strong>Performance Focused:</strong> Demonstrates SIMD vectorization, columnar reads, and MergeTree ordering gains'
+        ],
+        'ch-perf-label': '&#9201; Measured query performance over 1,000,660 rows:',
+        'ch-th-query': 'Query',
+        'ch-th-time': 'Time',
+        'ch-q1': 'GROUP BY neighborhood + 2 aggregations + ORDER BY',
+        'ch-q2': 'Simple count(*)',
+        'ch-footer': 'Same technology stack used by Anthropic, Tesla, Meta, and Mercado Libre — running on a laptop.',
+        'btn-ch-github': '&#128194; View on GitHub',
+        'btn-ch-docs': '&#128214; Read Documentation',
         'pbi-desc': 'Collection of interactive dashboards and reports demonstrating advanced Power BI capabilities, DAX calculations, and data storytelling for business insights.',
         'btn-pbi': '&#128202; View Portfolio',
         'footer-tagline': 'Building the future of data, one pipeline at a time &#128640;'
@@ -287,6 +355,23 @@
         'spark-footer': 'Este projeto demonstra a construção de data warehouse no mundo real com as melhores práticas utilizadas em empresas Fortune 500.',
         'btn-github': '&#128194; Ver no GitHub',
         'btn-docs': '&#128214; Ler Documentação',
+        'ch-title': '&#128200; NYC Taxi ClickHouse Lab — 78ms em 1 milhão de linhas',
+        'ch-intro': '<strong>Pipeline interativo de ingestão e analytics</strong> usando ClickHouse como banco colunar, com interface web em tempo real que acompanha o progresso do download e do insert e permite executar queries SQL arbitrárias após a carga:',
+        'ch-list': [
+          '&#128202; <strong>Armazenamento Colunar:</strong> Engine MergeTree com compressão LowCardinality para colunas de alta cardinalidade',
+          '&#9889; <strong>Pipeline em Tempo Real:</strong> Download assíncrono com streaming → insert em batches (50k linhas) → progresso ao vivo via REST API',
+          '&#128051; <strong>Totalmente Containerizado:</strong> ClickHouse + FastAPI rodando em Docker Compose com volume persistente',
+          '&#128269; <strong>Editor de Queries Interativo:</strong> Interface web para executar SQL direto no dataset de 1M de linhas',
+          '&#128296; <strong>Foco em Performance:</strong> Demonstra vetorização SIMD, leitura colunar e ganhos de ordenação do MergeTree'
+        ],
+        'ch-perf-label': '&#9201; Performance medida sobre 1.000.660 linhas:',
+        'ch-th-query': 'Query',
+        'ch-th-time': 'Tempo',
+        'ch-q1': 'GROUP BY bairro + 2 agregações + ORDER BY',
+        'ch-q2': 'count(*) simples',
+        'ch-footer': 'Mesma stack usada por Anthropic, Tesla, Meta e Mercado Livre — rodando num notebook.',
+        'btn-ch-github': '&#128194; Ver no GitHub',
+        'btn-ch-docs': '&#128214; Ler Documentação',
         'pbi-desc': 'Coleção de dashboards e relatórios interativos demonstrando capacidades avançadas do Power BI, cálculos DAX e narrativa de dados para insights de negócio.',
         'btn-pbi': '&#128202; Ver Portfólio',
         'footer-tagline': 'Construindo o futuro dos dados, um pipeline de cada vez &#128640;'
@@ -295,7 +380,7 @@
 
     function setLang(lang) {
       var t = translations[lang];
-      var listIds = ['exp-list', 'edu-list', 'spark-list'];
+      var listIds = ['exp-list', 'edu-list', 'spark-list', 'ch-list'];
 
       Object.keys(t).forEach(function(id) {
         var el = document.getElementById(id);
