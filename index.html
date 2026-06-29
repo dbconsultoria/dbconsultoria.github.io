@@ -28,7 +28,7 @@
   ═══════════════════════════════════════════════════ -->
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="Rodrigo Ribeiro | Senior Data Engineer — Spark · dbt · ClickHouse · Python · Azure" />
-  <meta property="og:description" content="Senior Data Engineer with 25+ years building scalable data platforms. Apache Spark, dbt, ClickHouse, Airflow, Snowflake, Azure & AWS. Portfolio includes Medallion Architecture DW, NYC Taxi ClickHouse lab (78ms / 1M rows), and ClickHouse Medallion Architecture with Airbyte + dbt." />
+  <meta property="og:description" content="Senior Data Engineer with 25+ years building scalable data platforms. Apache Spark, dbt, ClickHouse, Airflow, Snowflake, Azure & AWS. Portfolio includes Medallion Architecture DW with PySpark, and ClickHouse Medallion Architecture with Airbyte + dbt." />
   <meta property="og:url" content="https://dbconsultoria.github.io" />
   <meta property="og:site_name" content="Rodrigo Ribeiro — Data Engineering Portfolio" />
   <meta property="og:locale" content="en_US" />
@@ -115,7 +115,7 @@
       {
         "@type": "ProfilePage",
         "name": "Rodrigo Ribeiro — Senior Data Engineer Portfolio",
-        "description": "Portfolio of Rodrigo Ribeiro, Senior Data Engineer specializing in Apache Spark, dbt, ClickHouse, Python, Airflow, Snowflake, Azure, and AWS. Projects include Medallion Architecture Data Warehouse, NYC Taxi ClickHouse Lab, and ClickHouse Medallion Architecture with Airbyte + dbt.",
+        "description": "Portfolio of Rodrigo Ribeiro, Senior Data Engineer specializing in Apache Spark, dbt, ClickHouse, Python, Airflow, Snowflake, Azure, and AWS. Projects include Medallion Architecture Data Warehouse and ClickHouse Medallion Architecture with Airbyte + dbt.",
         "url": "https://dbconsultoria.github.io",
         "mainEntity": { "@id": "https://www.linkedin.com/in/rodrigo-ribeiro-pro/" }
       },
@@ -139,19 +139,6 @@
           {
             "@type": "ListItem",
             "position": 2,
-            "item": {
-              "@type": "SoftwareSourceCode",
-              "name": "NYC Taxi ClickHouse Lab — 78ms over 1M rows",
-              "description": "Interactive ingestion and analytics pipeline using ClickHouse as a columnar database with real-time FastAPI backend and SQL query editor.",
-              "programmingLanguage": ["Python", "SQL", "HTML"],
-              "codeRepository": "https://github.com/dbconsultoria/clickhouselab",
-              "author": { "@id": "https://www.linkedin.com/in/rodrigo-ribeiro-pro/" },
-              "keywords": "ClickHouse, FastAPI, Docker, MergeTree, Columnar Storage, Analytics, Python"
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
             "item": {
               "@type": "SoftwareSourceCode",
               "name": "ClickHouse Medallion Architecture — Airbyte OSS + dbt (Bronze / Silver / Gold)",
@@ -349,48 +336,7 @@
       </div>
     </div>
 
-    <!-- PROJECT 2: ClickHouse -->
-    <div class="project-card">
-      <h3 id="ch-title"></h3>
-      <div class="tech-stack">
-        <span class="tech-badge accent">ClickHouse</span>
-        <span class="tech-badge">Python 3.11</span>
-        <span class="tech-badge">FastAPI</span>
-        <span class="tech-badge">Docker</span>
-        <span class="tech-badge">MergeTree Engine</span>
-        <span class="tech-badge">Columnar Storage</span>
-        <span class="tech-badge">REST API</span>
-      </div>
-      <div class="description">
-        <p id="ch-intro"></p>
-        <ul id="ch-list"></ul>
-        <div style="margin-top: 20px;">
-          <p id="ch-perf-label" style="font-weight: 600; margin-bottom: 8px;"></p>
-          <table class="perf-table">
-            <thead>
-              <tr><th id="ch-th-query"></th><th id="ch-th-time"></th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td id="ch-q1"></td>
-                <td class="perf-highlight">78 ms</td>
-              </tr>
-              <tr>
-                <td id="ch-q2"></td>
-                <td class="perf-highlight">&lt; 5 ms</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p style="margin-top: 15px;"><em id="ch-footer"></em></p>
-      </div>
-      <div class="links">
-        <a href="https://github.com/dbconsultoria/clickhouselab" target="_blank" class="btn" id="btn-ch-github"></a>
-        <a href="https://github.com/dbconsultoria/clickhouselab#readme" target="_blank" class="btn btn-secondary" id="btn-ch-docs"></a>
-      </div>
-    </div>
-
-    <!-- PROJECT 3: ClickHouse Medallion -->
+    <!-- PROJECT 2: ClickHouse Medallion -->
     <div class="project-card">
       <h3 id="medal-title"></h3>
       <div class="tech-stack">
@@ -427,7 +373,7 @@
       </div>
     </div>
 
-    <!-- PROJECT 4: Power BI -->
+    <!-- PROJECT 3: Power BI -->
     <div class="project-card">
       <h3>&#128202; Power BI Portfolio</h3>
       <div class="tech-stack">
@@ -504,23 +450,6 @@
         'spark-footer': 'This project demonstrates real-world data warehouse construction with best practices used in Fortune 500 companies.',
         'btn-github': '&#128194; View on GitHub',
         'btn-docs': '&#128214; Read Documentation',
-        'ch-title': '&#128200; NYC Taxi ClickHouse Lab — 78ms over 1M rows',
-        'ch-intro': '<strong>Interactive ingestion and analytics pipeline</strong> using ClickHouse as a columnar database, featuring a real-time web interface that tracks download and insert progress and allows running arbitrary SQL queries after load:',
-        'ch-list': [
-          '&#128202; <strong>Columnar Storage:</strong> MergeTree engine with LowCardinality compression for high-cardinality string columns',
-          '&#9889; <strong>Real-time Pipeline:</strong> Async streaming download → batch insert (50k rows/batch) → live progress via REST API',
-          '&#128051; <strong>Fully Containerized:</strong> ClickHouse + FastAPI running on Docker Compose with persistent volume',
-          '&#128269; <strong>Interactive Query Editor:</strong> Web UI for running arbitrary SQL directly against the 1M-row dataset',
-          '&#128296; <strong>Performance Focused:</strong> Demonstrates SIMD vectorization, columnar reads, and MergeTree ordering gains'
-        ],
-        'ch-perf-label': '&#9201; Measured query performance over 1,000,660 rows:',
-        'ch-th-query': 'Query',
-        'ch-th-time': 'Time',
-        'ch-q1': 'GROUP BY neighborhood + 2 aggregations + ORDER BY',
-        'ch-q2': 'Simple count(*)',
-        'ch-footer': 'Same technology stack used by Anthropic, Tesla, Meta, and Mercado Libre — running on a laptop.',
-        'btn-ch-github': '&#128194; View on GitHub',
-        'btn-ch-docs': '&#128214; Read Documentation',
         'medal-title': '&#127959; ClickHouse Medallion Architecture — Airbyte OSS + dbt (Bronze / Silver / Gold)',
         'medal-intro': '<strong>End-to-end local Medallion pipeline</strong> using MySQL as the source, Airbyte OSS for ELT ingestion into ClickHouse (Bronze), and dbt-core for enrichment and analytical marts (Silver → Gold) — fully automated via a single <code>stack.sh</code> script:',
         'medal-list': [
@@ -588,23 +517,6 @@
         'spark-footer': 'Este projeto demonstra a construção de data warehouse no mundo real com as melhores práticas utilizadas em empresas Fortune 500.',
         'btn-github': '&#128194; Ver no GitHub',
         'btn-docs': '&#128214; Ler Documentação',
-        'ch-title': '&#128200; NYC Taxi ClickHouse Lab — 78ms em 1 milhão de linhas',
-        'ch-intro': '<strong>Pipeline interativo de ingestão e analytics</strong> usando ClickHouse como banco colunar, com interface web em tempo real que acompanha o progresso do download e do insert e permite executar queries SQL arbitrárias após a carga:',
-        'ch-list': [
-          '&#128202; <strong>Armazenamento Colunar:</strong> Engine MergeTree com compressão LowCardinality para colunas de alta cardinalidade',
-          '&#9889; <strong>Pipeline em Tempo Real:</strong> Download assíncrono com streaming → insert em batches (50k linhas) → progresso ao vivo via REST API',
-          '&#128051; <strong>Totalmente Containerizado:</strong> ClickHouse + FastAPI rodando em Docker Compose com volume persistente',
-          '&#128269; <strong>Editor de Queries Interativo:</strong> Interface web para executar SQL direto no dataset de 1M de linhas',
-          '&#128296; <strong>Foco em Performance:</strong> Demonstra vetorização SIMD, leitura colunar e ganhos de ordenação do MergeTree'
-        ],
-        'ch-perf-label': '&#9201; Performance medida sobre 1.000.660 linhas:',
-        'ch-th-query': 'Query',
-        'ch-th-time': 'Tempo',
-        'ch-q1': 'GROUP BY bairro + 2 agregações + ORDER BY',
-        'ch-q2': 'count(*) simples',
-        'ch-footer': 'Mesma stack usada por Anthropic, Tesla, Meta e Mercado Livre — rodando num notebook.',
-        'btn-ch-github': '&#128194; Ver no GitHub',
-        'btn-ch-docs': '&#128214; Ler Documentação',
         'medal-title': '&#127959; ClickHouse Medallion Architecture — Airbyte OSS + dbt (Bronze / Silver / Gold)',
         'medal-intro': '<strong>Pipeline Medallion local ponta a ponta</strong> usando MySQL como fonte, Airbyte OSS para ingestão ELT no ClickHouse (Bronze) e dbt-core para enriquecimento e marts analíticos (Silver → Gold) — totalmente automatizado via script <code>stack.sh</code>:',
         'medal-list': [
@@ -633,7 +545,7 @@
       }
     };
 
-    var listIds = ['exp-list', 'edu-list', 'spark-list', 'ch-list', 'medal-list'];
+    var listIds = ['exp-list', 'edu-list', 'spark-list', 'medal-list'];
 
     function setLang(lang) {
       var t = translations[lang];
