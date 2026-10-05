@@ -9,7 +9,7 @@
   ═══════════════════════════════════════════════════ -->
   <title>Rodrigo Ribeiro | Senior Data Engineer — Apache Spark, dbt, ClickHouse, Python, Azure</title>
   <meta name="description" content="Senior Data Engineer with 25+ years of experience in scalable data pipelines, lakehouse architectures, and modern data stack. Skilled in Apache Spark, dbt, ClickHouse, Python, Airflow, Snowflake, Azure and AWS. Open to global opportunities with visa sponsorship." />
-  <meta name="keywords" content="Senior Data Engineer, Apache Spark, dbt, ClickHouse, Python, PySpark, Airflow, Snowflake, Azure Data Engineer, AWS, Medallion Architecture, Lakehouse, ETL, ELT, Data Warehouse, SQL Server, FastAPI, Docker, Power BI, DAX, Data Engineering Brazil, Engenheiro de Dados Sênior, data pipeline, data platform, Dell Technologies, remote data engineer, visa sponsorship data engineer" />
+  <meta name="keywords" content="Senior Data Engineer, Apache Spark, dbt, ClickHouse, Python, PySpark, Airflow, Snowflake, Azure Data Engineer, AWS, Medallion Architecture, Lakehouse, ETL, ELT, Data Warehouse, SQL Server, FastAPI, Docker, Power BI, DAX, Data Engineering Brazil, Engenheiro de Dados Sênior, data pipeline, data platform, Dell Technologies, remote data engineer, visa sponsorship data engineer, Data Science, Machine Learning, Project Management" />
   <meta name="author" content="Rodrigo Ribeiro" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
   <meta name="language" content="en, pt-BR" />
@@ -82,9 +82,24 @@
           "Data Warehouse", "FastAPI", "Docker", "Power BI", "DAX",
           "Data Engineering", "Business Intelligence", "Data Architecture",
           "Agile", "Scrum", "SAFe", "SSIS", "Azure DevOps",
-          "Iceberg", "Parquet", "Star Schema", "SCD Type 2", "Airbyte"
+          "Iceberg", "Parquet", "Star Schema", "SCD Type 2", "Airbyte",
+          "Data Science", "Machine Learning", "Project Management"
         ],
         "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Postgraduate Specialization in Data Science and Machine Learning (in progress)",
+            "credentialCategory": "Postgraduate Specialization",
+            "recognizedBy": { "@type": "EducationalOrganization", "name": "Anhanguera Educacional" },
+            "dateCreated": "2026"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Postgraduate Specialization in Project Management",
+            "credentialCategory": "Postgraduate Specialization",
+            "recognizedBy": { "@type": "EducationalOrganization", "name": "Senac Brasil" },
+            "dateCreated": "2011"
+          },
           {
             "@type": "EducationalOccupationalCredential",
             "name": "Microsoft Certified: Azure Database Administrator Associate",
@@ -107,10 +122,11 @@
             "dateCreated": "2022"
           }
         ],
-        "alumniOf": {
-          "@type": "EducationalOrganization",
-          "name": "Computer Science — Bachelor's Degree"
-        }
+        "alumniOf": [
+          { "@type": "EducationalOrganization", "name": "Anhanguera Educacional" },
+          { "@type": "EducationalOrganization", "name": "Senac Brasil" },
+          { "@type": "EducationalOrganization", "name": "Computer Science — Bachelor's Degree" }
+        ]
       },
       {
         "@type": "ProfilePage",
@@ -205,6 +221,16 @@
     ul { margin-left: 20px; margin-top: 10px; }
     ul li { margin-bottom: 10px; line-height: 1.8; }
 
+    .edu-item { padding: 18px 0; border-bottom: 1px solid #ecf0f1; }
+    .edu-item:last-of-type { border-bottom: none; }
+    .edu-item h3 { margin: 0 0 6px 0; font-size: 1.35em; }
+    .edu-meta { color: #7f8c8d; font-size: 1em; }
+    .edu-meta strong { color: #2c3e50; }
+    .edu-status {
+      display: inline-block; margin-left: 8px; padding: 2px 10px; border-radius: 12px;
+      background-color: #27ae60; color: white; font-size: 0.8em; font-weight: 600; vertical-align: middle;
+    }
+
     .project-card {
       background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
       padding: 30px; margin-bottom: 30px; border-radius: 12px;
@@ -294,7 +320,24 @@
 
   <section id="education">
     <h2 id="edu-title"></h2>
-    <h3 id="edu-degree"></h3>
+
+    <!-- Postgraduate: Data Science & ML (Anhanguera) -->
+    <div class="edu-item">
+      <h3><span id="edu-pg1-title"></span><span class="edu-status" id="edu-pg1-status"></span></h3>
+      <p class="edu-meta"><strong>Anhanguera Educacional</strong> · <span id="edu-pg1-date"></span></p>
+    </div>
+
+    <!-- Postgraduate: Project Management (Senac) -->
+    <div class="edu-item">
+      <h3 id="edu-pg2-title"></h3>
+      <p class="edu-meta"><strong>Senac Brasil</strong> · <span id="edu-pg2-date"></span></p>
+    </div>
+
+    <!-- Bachelor's -->
+    <div class="edu-item">
+      <h3 id="edu-degree"></h3>
+    </div>
+
     <p style="margin-top: 15px;" id="edu-dev"></p>
     <ul id="edu-list"></ul>
   </section>
@@ -396,13 +439,14 @@
   <section aria-label="Skills and technologies" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
     <h2>Skills</h2>
     <p>Senior Data Engineer specializing in Apache Spark, PySpark, dbt, dbt-core, dbt-clickhouse, ClickHouse, Python, Airflow, Snowflake, Azure, AWS, SQL Server, FastAPI, Docker, Power BI, DAX, Medallion Architecture, Lakehouse, ETL, ELT, Data Warehouse, Star Schema, SCD Type 2, Iceberg, Parquet, SSIS, Azure DevOps, Airbyte, Agile, Scrum, SAFe. Open to remote work, relocation, and visa sponsorship opportunities in the United States, Canada, Europe, and globally. Engenheiro de Dados Sênior com mais de 25 anos de experiência em pipelines de dados, arquitetura lakehouse, e modern data stack.</p>
+    <p>Education: Postgraduate Specialization in Data Science and Machine Learning (Anhanguera Educacional, in progress). Postgraduate Specialization in Project Management (Senac Brasil). Bachelor's Degree in Computer Science. Pós-graduação Lato Sensu em Ciência de Dados e Machine Learning. Pós-graduação Lato Sensu em Gerenciamento de Projetos.</p>
     <p>Certifications: Microsoft Certified Azure Database Administrator Associate DP-300, Microsoft Certified Power BI Data Analyst Associate PL-300, Microsoft Certified Azure Data Engineer Associate DP-203.</p>
     <p>Currently employed at Dell Technologies as Senior Data Engineer in Florianópolis, Santa Catarina, Brazil. Available for L-1 intracompany transfer or direct sponsorship.</p>
   </section>
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Rodrigo Ribeiro | Senior Data Engineer</p>
+      <p>&copy; 2026 Rodrigo Ribeiro | Senior Data Engineer</p>
       <p style="margin-top: 10px; font-size: 0.9em;" id="footer-tagline"></p>
     </div>
   </footer>
@@ -425,6 +469,11 @@
         'prev-roles-title': 'Previous Roles',
         'prev-roles-desc': 'BI Specialist & Data Architect at Cresol, DBAplex | <strong>10+ years of experience</strong> in Business Intelligence, Data Warehousing, and Analytics',
         'edu-title': '&#127891; Education',
+        'edu-pg1-title': 'Postgraduate Specialization in Data Science and Machine Learning',
+        'edu-pg1-status': 'In progress',
+        'edu-pg1-date': 'Since Jul 2026',
+        'edu-pg2-title': 'Postgraduate Specialization in Project Management',
+        'edu-pg2-date': '2010 to 2011',
         'edu-degree': "Bachelor's Degree in Computer Science",
         'edu-dev': 'Continuous professional development in:',
         'edu-list': [
@@ -492,6 +541,11 @@
         'prev-roles-title': 'Cargos Anteriores',
         'prev-roles-desc': 'Especialista em BI & Arquiteto de Dados na Cresol, DBAplex | <strong>Mais de 10 anos de experiência</strong> em Business Intelligence, Data Warehousing e Analytics',
         'edu-title': '&#127891; Educação',
+        'edu-pg1-title': 'Pós-graduação Lato Sensu em Ciência de Dados e Machine Learning',
+        'edu-pg1-status': 'Em andamento',
+        'edu-pg1-date': 'Desde jul. 2026',
+        'edu-pg2-title': 'Pós-graduação Lato Sensu em Gerenciamento de Projetos',
+        'edu-pg2-date': '2010 a 2011',
         'edu-degree': 'Bacharelado em Ciência da Computação',
         'edu-dev': 'Desenvolvimento profissional contínuo em:',
         'edu-list': [
@@ -562,6 +616,7 @@
 
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
       document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+      document.documentElement.lang = (lang === 'pt') ? 'pt-BR' : 'en';
     }
 
     setLang('en');
