@@ -305,6 +305,32 @@
     .perf-table tr:last-child td { border-bottom: none; }
     .perf-highlight { font-weight: 700; color: #27ae60; }
 
+    .eval-block { margin: 30px 0 10px; }
+    .eval-sub { color: #7f8c8d; font-size: 0.95em; margin-bottom: 14px; }
+    .stat-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+    .stat-tile { background: white; border: 1px solid #f5c26b; border-radius: 10px; padding: 14px 16px; }
+    .stat-value { font-size: 1.9em; font-weight: 700; color: #2c3e50; line-height: 1.1; }
+    .stat-value small { font-size: 0.5em; font-weight: 600; color: #7f8c8d; margin-left: 4px; }
+    .stat-label { font-size: 0.88em; color: #5d6d7e; margin-top: 4px; line-height: 1.4; }
+    .eval-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 16px; align-items: start; }
+    .eval-panel { background: white; border: 1px solid #f5c26b; border-radius: 10px; padding: 14px 18px; }
+    .eval-panel h4 { font-size: 1em; color: #2c3e50; margin-bottom: 8px; }
+    .eval-panel .perf-table { margin: 0; }
+    .bar-row { display: grid; grid-template-columns: 150px 1fr 52px; align-items: center; gap: 10px; padding: 4px 0; cursor: default; }
+    .bar-row:hover .bar-fill { background: #ca6510; }
+    .bar-label { font-size: 0.9em; color: #2c3e50; }
+    .bar-track { height: 12px; background: #f4ecdf; border-radius: 4px; overflow: hidden; }
+    .bar-fill { height: 100%; background: #e67e22; border-radius: 0 4px 4px 0; transition: background 0.15s; }
+    .bar-val { font-size: 0.88em; color: #5d6d7e; text-align: right; font-variant-numeric: tabular-nums; }
+    .eval-note { margin-top: 14px; font-size: 0.93em; color: #2c3e50; background: #fff8ec; border-left: 4px solid #f39c12; padding: 10px 14px; border-radius: 6px; }
+    @media (max-width: 768px) {
+      .stat-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .stat-tile { padding: 12px; }
+      .stat-value { font-size: 1.5em; }
+      .eval-grid { grid-template-columns: minmax(0, 1fr); }
+      .bar-row { grid-template-columns: 110px 1fr 46px; }
+    }
+
     .arch-figure { margin: 25px 0 10px; }
     .arch-figure a { display: block; border-radius: 10px; overflow: hidden; border: 1px solid #f5c26b; background: #fafaf8; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
     .arch-figure img { display: block; width: 100%; height: auto; }
@@ -459,6 +485,38 @@
           </a>
           <figcaption id="t2s-arch-caption"></figcaption>
         </figure>
+
+        <div class="eval-block" id="t2s-eval">
+          <p id="t2s-eval-label" style="font-weight: 600; margin-bottom: 2px;"></p>
+          <p class="eval-sub" id="t2s-eval-sub"></p>
+
+          <div class="stat-row">
+            <div class="stat-tile"><div class="stat-value">76.7%<small>23/30</small></div><div class="stat-label" id="t2s-st1"></div></div>
+            <div class="stat-tile"><div class="stat-value">2/2</div><div class="stat-label" id="t2s-st2"></div></div>
+            <div class="stat-tile"><div class="stat-value">1.07</div><div class="stat-label" id="t2s-st3"></div></div>
+            <div class="stat-tile"><div class="stat-value">28.5s</div><div class="stat-label" id="t2s-st4"></div></div>
+          </div>
+
+          <div class="eval-grid">
+            <div class="eval-panel">
+              <h4 id="t2s-lvl-title"></h4>
+              <table class="perf-table">
+                <thead><tr><th id="t2s-lvl-th1"></th><th id="t2s-lvl-th2"></th><th>%</th></tr></thead>
+                <tbody>
+                  <tr><td id="t2s-lvl-easy"></td><td>10/13</td><td>77%</td></tr>
+                  <tr><td id="t2s-lvl-med"></td><td>10/12</td><td>83%</td></tr>
+                  <tr><td id="t2s-lvl-hard"></td><td>3/5</td><td>60%</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="eval-panel">
+              <h4 id="t2s-cap-title"></h4>
+              <div id="t2s-cap-bars"></div>
+            </div>
+          </div>
+
+          <p class="eval-note" id="t2s-eval-note"></p>
+        </div>
         <p style="margin-top: 15px;"><em id="t2s-footer"></em></p>
       </div>
       <div class="links">
@@ -630,6 +688,20 @@
         't2s-s5-desc': 'Benchmark of 30 questions compares result sets with the gold SQL (order aware, 0.01 decimal tolerance) and exports a CSV report',
         't2s-arch-label': '&#128506; Architecture:',
         't2s-arch-caption': 'Click to open the full size diagram',
+        't2s-eval-label': '&#128207; Evaluation results',
+        't2s-eval-sub': 'qwen2.5-coder:7b running locally on Ollama · 30 benchmark questions with gold SQL · strict execution match',
+        't2s-st1': 'Strict accuracy',
+        't2s-st2': 'Write requests correctly refused',
+        't2s-st3': 'Average attempts per question',
+        't2s-st4': 'Median latency per question',
+        't2s-lvl-title': 'By difficulty',
+        't2s-lvl-th1': 'Level',
+        't2s-lvl-th2': 'Correct',
+        't2s-lvl-easy': 'Easy',
+        't2s-lvl-med': 'Medium',
+        't2s-lvl-hard': 'Hard',
+        't2s-cap-title': 'By capability',
+        't2s-eval-note': '<strong>Reading the numbers:</strong> the benchmark is deliberately strict, a question only counts if the result has exactly the same columns and rows as the gold SQL. Of the 7 misses, only 1 is a clear model error (an empty result on a relative date question). 3 returned the right answer in a different shape (extra columns or a side by side layout) and 3 need SQL level review. Only 2 questions needed a retry, and both were answered correctly. Next step: log the generated SQL and report a lenient metric next to the strict one.',
         't2s-footer': 'Brings data platform discipline to GenAI: semantic layer, least privilege access and measurable accuracy, the things that separate a production ready assistant from a demo.',
         'btn-t2s-github': '&#128194; View on GitHub',
         'btn-t2s-docs': '&#128214; Read Documentation',
@@ -736,6 +808,20 @@
         't2s-s5-desc': 'Benchmark de 30 perguntas compara os resultados com o SQL gabarito (respeitando ordem quando há ORDER BY, tolerância de 0.01 em decimais) e gera relatório em CSV',
         't2s-arch-label': '&#128506; Arquitetura:',
         't2s-arch-caption': 'Clique para abrir o diagrama em tamanho real',
+        't2s-eval-label': '&#128207; Resultados da avaliação',
+        't2s-eval-sub': 'qwen2.5-coder:7b rodando localmente no Ollama · 30 perguntas com SQL gabarito · comparação estrita do resultado',
+        't2s-st1': 'Acurácia estrita',
+        't2s-st2': 'Pedidos de escrita recusados corretamente',
+        't2s-st3': 'Média de tentativas por pergunta',
+        't2s-st4': 'Latência mediana por pergunta',
+        't2s-lvl-title': 'Por dificuldade',
+        't2s-lvl-th1': 'Nível',
+        't2s-lvl-th2': 'Acertos',
+        't2s-lvl-easy': 'Fácil',
+        't2s-lvl-med': 'Médio',
+        't2s-lvl-hard': 'Difícil',
+        't2s-cap-title': 'Por capacidade',
+        't2s-eval-note': '<strong>Como ler os números:</strong> o benchmark é propositalmente rigoroso, uma pergunta só conta como acerto se o resultado tiver exatamente as mesmas colunas e linhas do SQL gabarito. Dos 7 erros, só 1 é falha clara do modelo (resultado vazio numa pergunta com data relativa). 3 trouxeram a resposta certa em outro formato (colunas a mais ou comparação lado a lado) e 3 precisam de revisão do SQL. Só 2 perguntas precisaram de nova tentativa, e as duas acertaram. Próximo passo: registrar o SQL gerado e reportar uma métrica flexível ao lado da estrita.',
         't2s-footer': 'Leva a disciplina de plataforma de dados para a IA generativa: camada semântica, menor privilégio e acurácia mensurável, o que separa um assistente pronto para produção de uma demo.',
         'btn-t2s-github': '&#128194; Ver no GitHub',
         'btn-t2s-docs': '&#128214; Ler Documentação',
@@ -783,6 +869,32 @@
 
     var listIds = ['exp-list', 'edu-list', 't2s-list', 'spark-list', 'medal-list'];
 
+    // mytext2sql benchmark, qwen2.5-coder:7b (eval/relatorio_qwen2.5-coder_7b.csv)
+    var evalCaps = [
+      { en: 'Aggregation',          pt: 'Agregação',           ok: 16, n: 17 },
+      { en: 'Geography',            pt: 'Geografia',           ok: 4,  n: 4 },
+      { en: 'Refusal',              pt: 'Recusa',              ok: 2,  n: 2 },
+      { en: 'Relative dates',       pt: 'Datas relativas',     ok: 3,  n: 4 },
+      { en: 'Ranking',              pt: 'Ranking',             ok: 4,  n: 6 },
+      { en: 'Category translation', pt: 'Tradução de categoria', ok: 4, n: 6 },
+      { en: 'Text search',          pt: 'Busca por texto',     ok: 0,  n: 2 },
+      { en: 'Comparison',           pt: 'Comparação',          ok: 0,  n: 2 }
+    ];
+
+    function renderEvalBars(lang) {
+      var el = document.getElementById('t2s-cap-bars');
+      if (!el) return;
+      var of = lang === 'pt' ? ' de ' : ' of ';
+      var corr = lang === 'pt' ? ' corretas' : ' correct';
+      el.innerHTML = evalCaps.map(function (c) {
+        var pct = Math.round(c.ok / c.n * 100);
+        return '<div class="bar-row" title="' + c[lang] + ': ' + c.ok + of + c.n + corr + '">' +
+          '<span class="bar-label">' + c[lang] + '</span>' +
+          '<div class="bar-track"><div class="bar-fill" style="width:' + pct + '%"></div></div>' +
+          '<span class="bar-val">' + c.ok + '/' + c.n + '</span></div>';
+      }).join('');
+    }
+
     function setLang(lang) {
       var t = translations[lang];
 
@@ -795,6 +907,8 @@
           el.innerHTML = t[id];
         }
       });
+
+      renderEvalBars(lang);
 
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
       document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
