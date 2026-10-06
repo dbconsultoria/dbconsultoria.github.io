@@ -218,6 +218,19 @@
     header .links { margin-top: 20px; }
     header .links a { color: #3498db; margin: 0 15px; text-decoration: none; font-weight: 600; font-size: 1.1em; }
     header .links a:hover { color: #5dade2; }
+    header .links a.contact-btn,
+    footer a.contact-btn {
+      display: inline-block; margin: 0 15px; padding: 8px 22px; border-radius: 25px;
+      background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); color: white;
+      text-decoration: none; font-weight: 700; font-size: 1.1em;
+      box-shadow: 0 4px 10px rgba(230,126,34,0.35); transition: transform 0.2s, box-shadow 0.2s;
+    }
+    header .links a.contact-btn:hover,
+    footer a.contact-btn:hover { color: white; transform: translateY(-2px); box-shadow: 0 6px 14px rgba(230,126,34,0.5); }
+    footer a.contact-btn { margin: 15px 0 5px; }
+    @media (max-width: 768px) {
+      header .links a { display: inline-block; margin: 8px 10px; }
+    }
 
     nav {
       background-color: #34495e; padding: 15px 0; text-align: center;
@@ -346,6 +359,7 @@
       <div class="links">
         <a href="https://www.linkedin.com/in/rodrigo-ribeiro-pro/" target="_blank">&#128279; LinkedIn</a>
         <a href="https://github.com/dbconsultoria" target="_blank">&#128187; GitHub</a>
+        <a href="mailto:dbconsultoria@gmail.com?subject=Contact%20from%20your%20portfolio" class="contact-btn" id="h-contact"></a>
       </div>
     </div>
   </header>
@@ -545,7 +559,8 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 Rodrigo Ribeiro | Senior Data Engineer</p>
+      <a href="mailto:dbconsultoria@gmail.com?subject=Contact%20from%20your%20portfolio" class="contact-btn" id="f-contact"></a>
+      <p style="margin-top: 15px;">&copy; 2026 Rodrigo Ribeiro | Senior Data Engineer</p>
       <p style="margin-top: 10px; font-size: 0.9em;" id="footer-tagline"></p>
     </div>
   </footer>
@@ -555,6 +570,8 @@
       en: {
         'h-title': 'Senior Data Engineer',
         'h-subtitle': 'Building scalable data solutions and AI powered analytics with Apache Spark, Python, LLMs & Cloud Technologies',
+        'h-contact': '&#9993; Contact me',
+        'f-contact': '&#9993; Get in touch',
         'nav-exp': 'Experience',
         'nav-edu': 'Education',
         'nav-cert': 'Certifications',
@@ -659,6 +676,8 @@
       pt: {
         'h-title': 'Engenheiro de Dados Sênior',
         'h-subtitle': 'Construindo soluções de dados escaláveis e analytics com IA usando Apache Spark, Python, LLMs e Tecnologias Cloud',
+        'h-contact': '&#9993; Fale comigo',
+        'f-contact': '&#9993; Entre em contato',
         'nav-exp': 'Experiência',
         'nav-edu': 'Educação',
         'nav-cert': 'Certificações',
