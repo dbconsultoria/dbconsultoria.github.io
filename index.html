@@ -292,6 +292,11 @@
     .perf-table tr:last-child td { border-bottom: none; }
     .perf-highlight { font-weight: 700; color: #27ae60; }
 
+    .arch-figure { margin: 25px 0 10px; }
+    .arch-figure a { display: block; border-radius: 10px; overflow: hidden; border: 1px solid #f5c26b; background: #fafaf8; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
+    .arch-figure img { display: block; width: 100%; height: auto; }
+    .arch-figure figcaption { margin-top: 8px; font-size: 0.9em; color: #7f8c8d; text-align: center; }
+
     .btn {
       display: inline-block; padding: 12px 25px; margin: 5px 10px 5px 0;
       background-color: #3498db; color: white; text-decoration: none;
@@ -431,6 +436,15 @@
             </tbody>
           </table>
         </div>
+        <figure class="arch-figure">
+          <p id="t2s-arch-label" style="font-weight: 600; margin-bottom: 8px;"></p>
+          <a href="https://github.com/dbconsultoria/mytext2sql/blob/main/docs/mytext2sql_diagrama.svg" target="_blank" rel="noopener">
+            <img src="https://raw.githubusercontent.com/dbconsultoria/mytext2sql/main/docs/mytext2sql_diagrama.svg"
+                 alt="mytext2sql architecture: Streamlit UI, pipeline with prompts, Ollama LLM, sqlglot SQL guard and read only executor with retry loop, MySQL semantic views over raw tables, and four defense layers"
+                 width="1400" height="860" loading="lazy" />
+          </a>
+          <figcaption id="t2s-arch-caption"></figcaption>
+        </figure>
         <p style="margin-top: 15px;"><em id="t2s-footer"></em></p>
       </div>
       <div class="links">
@@ -597,6 +611,8 @@
         't2s-s4-desc': 'Read only user runs the query with timeout and row limit; failures trigger a retry (max 3x)',
         't2s-s5-name': 'Evaluation',
         't2s-s5-desc': 'Benchmark of 30 questions compares result sets with the gold SQL (order aware, 0.01 decimal tolerance) and exports a CSV report',
+        't2s-arch-label': '&#128506; Architecture:',
+        't2s-arch-caption': 'Click to open the full size diagram',
         't2s-footer': 'Brings data platform discipline to GenAI: semantic layer, least privilege access and measurable accuracy, the things that separate a production ready assistant from a demo.',
         'btn-t2s-github': '&#128194; View on GitHub',
         'btn-t2s-docs': '&#128214; Read Documentation',
@@ -699,6 +715,8 @@
         't2s-s4-desc': 'Usuário somente leitura roda a query com timeout e limite de linhas; falhas disparam nova tentativa (máx. 3x)',
         't2s-s5-name': 'Avaliação',
         't2s-s5-desc': 'Benchmark de 30 perguntas compara os resultados com o SQL gabarito (respeitando ordem quando há ORDER BY, tolerância de 0.01 em decimais) e gera relatório em CSV',
+        't2s-arch-label': '&#128506; Arquitetura:',
+        't2s-arch-caption': 'Clique para abrir o diagrama em tamanho real',
         't2s-footer': 'Leva a disciplina de plataforma de dados para a IA generativa: camada semântica, menor privilégio e acurácia mensurável, o que separa um assistente pronto para produção de uma demo.',
         'btn-t2s-github': '&#128194; Ver no GitHub',
         'btn-t2s-docs': '&#128214; Ler Documentação',
