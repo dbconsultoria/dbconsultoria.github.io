@@ -359,7 +359,7 @@
       <div class="links">
         <a href="https://www.linkedin.com/in/rodrigo-ribeiro-pro/" target="_blank">&#128279; LinkedIn</a>
         <a href="https://github.com/dbconsultoria" target="_blank">&#128187; GitHub</a>
-        <a href="mailto:dbconsultoria@gmail.com?subject=Contact%20from%20your%20portfolio" class="contact-btn" id="h-contact"></a>
+        <a href="#" class="contact-btn" rel="nofollow" id="h-contact"></a>
       </div>
     </div>
   </header>
@@ -559,7 +559,7 @@
 
   <footer>
     <div class="container">
-      <a href="mailto:dbconsultoria@gmail.com?subject=Contact%20from%20your%20portfolio" class="contact-btn" id="f-contact"></a>
+      <a href="#" class="contact-btn" rel="nofollow" id="f-contact"></a>
       <p style="margin-top: 15px;">&copy; 2026 Rodrigo Ribeiro | Senior Data Engineer</p>
       <p style="margin-top: 10px; font-size: 0.9em;" id="footer-tagline"></p>
     </div>
@@ -802,6 +802,24 @@
     }
 
     setLang('en');
+
+    // Contact: the address is assembled only on click, so it never appears
+    // as plain text or as a mailto link in the page source (blocks scrapers).
+    (function () {
+      var p = ['moc', 'liamg', 'airotlusnocbd'];
+      function addr() {
+        var r = p.map(function (s) { return s.split('').reverse().join(''); });
+        return r[2] + String.fromCharCode(64) + r[1] + '.' + r[0];
+      }
+      var subjects = { en: 'Contact from your portfolio', pt: 'Contato pelo seu portfólio' };
+      document.querySelectorAll('.contact-btn').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          var lang = document.documentElement.lang === 'pt-BR' ? 'pt' : 'en';
+          window.location.href = 'mai' + 'lto:' + addr() + '?subject=' + encodeURIComponent(subjects[lang]);
+        });
+      });
+    })();
   </script>
 
 </body>
